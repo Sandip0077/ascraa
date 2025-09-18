@@ -137,12 +137,12 @@ const SignUpPage = ({
             <>
               <div>
                 <label htmlFor="signup-otp" className="block text-sm font-medium text-gray-700 mb-1">
-                  One‑Time Password (OTP)
+                  One-Time Password (OTP)
                 </label>
                 <Input
                   id="signup-otp"
                   type="text"
-                  placeholder="Enter 6‑digit OTP"
+                  placeholder="Enter 6-digit OTP"
                   value={otp}
                   onChange={(e) => setOtp(e.target.value)}
                 />
@@ -191,31 +191,27 @@ const SignUpPage = ({
 
           <p className="text-center text-sm text-gray-600">
             Already have an account?{' '}
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setCurrentPage('login');
-              }}
-              className="text-blue-600 hover:underline"
+            <button
+              type="button"
+              onClick={() => setCurrentPage('login')}
+              className="text-blue-600 hover:underline bg-transparent border-0 p-0"
             >
               Login
-            </a>
+            </button>
           </p>
 
           <p className="text-center text-sm text-gray-600">
             Not a {userType}?{' '}
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
+            <button
+              type="button"
+              onClick={() => {
                 setAuthUserType(null);
                 setCurrentPage('auth-selection');
               }}
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline bg-transparent border-0 p-0"
             >
               Change Role
-            </a>
+            </button>
           </p>
         </CardContent>
       </Card>

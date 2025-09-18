@@ -151,9 +151,29 @@ const App = () => {
       <footer className="bg-gray-800 text-white py-6 text-center text-sm font-inter mt-auto">
         <p>&copy; {new Date().getFullYear()} ascra. All rights reserved.</p>
         <p className="mt-2 text-gray-400">
-          <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); }} className="hover:underline mx-2">Home</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('contact'); }} className="hover:underline mx-2">Contact</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); }} className="hover:underline mx-2">Privacy Policy</a>
+          <button
+            type="button"
+            onClick={() => setCurrentPage('home')}
+            className="hover:underline mx-2 text-gray-300 bg-transparent border-0 p-0"
+          >
+            Home
+          </button>
+          |
+          <button
+            type="button"
+            onClick={() => setCurrentPage('contact')}
+            className="hover:underline mx-2 text-gray-300 bg-transparent border-0 p-0"
+          >
+            Contact
+          </button>
+          |
+          <button
+            type="button"
+            onClick={() => setCurrentPage('privacy')}
+            className="hover:underline mx-2 text-gray-300 bg-transparent border-0 p-0"
+          >
+            Privacy Policy
+          </button>
         </p>
       </footer>
       {messageBox && (

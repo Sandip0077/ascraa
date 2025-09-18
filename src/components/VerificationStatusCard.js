@@ -1,7 +1,4 @@
-// src/components/VerificationStatusCard.js
-
 import React, { useState } from 'react';
-
 
 import {
   Card,
@@ -11,7 +8,7 @@ import {
 } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { Loader2, CheckCircle2, XCircle } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 
 const VerificationStatusCard = ({ docStatus, onVerify }) => {
   const [loading, setLoading] = useState(false);
@@ -31,8 +28,11 @@ const VerificationStatusCard = ({ docStatus, onVerify }) => {
 
   const handleClick = async () => {
     setLoading(true);
-    await onVerify(); // simulate API call
-    setLoading(false);
+    try {
+      await onVerify(); // simulate API call (caller should handle)
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
